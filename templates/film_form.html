@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% load bootstrap %}
+
+{% block title %}Filmy z Leo{% endblock %}
+{% block content %}
+
+
+<div class="card" style="width: 26rem; float: left; margin-right: 1rem">
+
+  <div class="card-body">
+    <h5 class="card-title">FILM</h5>
+          <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{ form_film|bootstrap }}
+              {{ form_dodatkowe|bootstrap }}
+              {{ form_ocena|bootstrap }}
+            <br>
+        <button class="btn btn-primary" type="submit">Dodaj<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+</form>
+      <br>
+      <a class="btn btn-primary" href="{% url 'filmy' %}">Cofnij</a>
+  </div>
+</div>
+
+{% for ocena in oceny %}
+<h4>Gwiazdki: {{ocena.gwiazdki}}</h4>
+<p>{{ocena.recenzja}}</p>
+{% endfor %}
+
+{% endblock %}

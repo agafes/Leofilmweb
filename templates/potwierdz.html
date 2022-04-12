@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% load bootstrap %}
+
+{% block title %}Potwierdź{% endblock %}
+{% block content %}
+
+
+<div class="card" style="width: 26rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Czy na pewno chcesz usunąć ?</h5>
+          <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+            <br>
+        <button class="btn btn-primary" type="submit">Usuń</button>
+</form>
+    <br>
+    <a class="btn btn-primary" href="{% url 'filmy' %}">Cofnij</a>
+  </div>
+</div>
+
+{% endblock %}
