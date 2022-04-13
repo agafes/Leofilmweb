@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'moje_static')
-STATICFILES_DIRS = ['moje_static']
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'moje_media'
