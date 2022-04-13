@@ -34,6 +34,7 @@ def edytuj_film(request, id):
     film = get_object_or_404(Film, pk=id)
     oceny = Ocena.objects.filter(film=film)
 
+
     try:
         dodatkowe = DodatkoweInfo.objects.get(film=film.id)
     except DodatkoweInfo.DoesNotExist:
